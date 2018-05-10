@@ -18,7 +18,7 @@ node {
     	}
     	
     	stage('create docker image'){
-		        sh 'docker login --username dhineshk6 --password Jamesbond@1234'
+		        sh 'docker login --username dhineshk6 --password Docker@1234'
 		        sh ("docker build -t testnewproject .")
 		        sh ("docker tag  testnewproject dhineshk6/test:testnewproject")
     	}
