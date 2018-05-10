@@ -28,7 +28,7 @@ node {
     	}
     	
     	stage('create deployment'){
-    	    sh 'kubectl delete deployments testnewprojectapi || true' 
+    	    sh 'kubectl delete deployment testnewprojectapi || true' 
 	    sh 'kubectl create -f deployment.yaml --validate=false'
     	}
     	
