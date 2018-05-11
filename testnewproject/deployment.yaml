@@ -1,14 +1,8 @@
-apiVersion: extensions/v1beta2
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   name: testnewproject
-  labels:
-     app: testnewproject
 spec:
-  replicas: 2
-  selector:
-    matchLabels:
-      app: testnewproject
   template:
     metadata:
       labels:
@@ -16,7 +10,7 @@ spec:
     spec:
       containers:
       - name: testnewproject
-        image: dhineshk6/test:testnewproject
+        image: prakashg84/test:testnewproject
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
