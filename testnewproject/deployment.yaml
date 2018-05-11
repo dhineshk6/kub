@@ -1,16 +1,21 @@
-apiVersion: apps/v1
+apiVersion: v1
 kind: Deployment
 metadata:
   name: testnewproject
 spec:
+  replicas: 1
   template:
     metadata:
       labels:
         app: testnewproject
+        tier: backend
     spec:
       containers:
       - name: testnewproject
         image: dhineshk6/test:testnewproject
-        imagePullPolicy: IfNotPresent
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
         ports:
         - containerPort: 8080
