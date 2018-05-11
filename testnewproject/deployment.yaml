@@ -1,8 +1,14 @@
-apiVersion: apps/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: testnewproject
+  labels:
+     app: testnewproject
 spec:
+  replicas: 2
+  selector:
+    matchLabels:
+	  app: testnewproject
   template:
     metadata:
       labels:
