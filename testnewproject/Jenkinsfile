@@ -27,13 +27,13 @@ node {
 			sh ("docker push dhineshk6/test:testnewproject")
     	}
 	stage('create deployment'){
-    	    sh ("kubectl delete deployments testnewprojectapi || true") 
-	    sh ("kubectl create -f deployment.yaml --validate=false")
+    	                sh ("kubectl delete deployments testnewprojectapi || true") 
+	                sh ("kubectl create -f deployment.yaml --validate=false")
     	}
     	
     	stage('create service'){
-	    sh ("kubectl delete services testnewprojectapiservice || true")
-	    sh ("kubectl create -f services.yaml --validate=false")
+	                sh ("kubectl delete services testnewprojectapiservice || true")
+	                sh ("kubectl create -f services.yaml --validate=false")
     	}    
     	
     }
