@@ -27,17 +27,6 @@ node {
 			sh ("docker push dhineshk6/test:testnewproject")
     	}
     	
-    	stage('create deployment'){
-	    sh 'cd /var/lib/jenkins/workspace/kubernetes/testnewproject'	
-    	    sh 'kubectl delete deployment testnewprojectapi || true' 
-	    sh 'kubectl create -f deployment.yaml --validate=false'
-    	}
-    	
-    	stage('create service'){
-	    sh 'cd /var/lib/jenkins/workspace/kubernetes/testnewproject'	
-	    sh 'kubectl delete services testnewprojectapiservice || true'
-	    sh 'kubectl create -f services.yaml --validate=false'
-    	}
     }
     }
 }
