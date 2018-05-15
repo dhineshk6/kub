@@ -28,7 +28,7 @@ node {
     	}
 	stage('create deployment'){
     	                sh 'kubectl delete deployments testnewproject || true' 
-	                sh 'kubectl create -f /var/lib/jenkins/workspace/kubernetes/testnewproject/deployment.yaml'
+	                sh 'kubectl create -f ./deployment.yaml'
     	}
     	
     	stage('create service'){
